@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6412D80620A0661900CB97C2 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412D80520A0661900CB97C2 /* LibraryAPI.swift */; };
 		6412D80820A066DC00CB97C2 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412D80720A066DC00CB97C2 /* PersistencyManager.swift */; };
+		646E721120A421AE00D2A33E /* SingletonDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 646E721020A421AE00D2A33E /* SingletonDemo.m */; };
 		79F6FC411F14251800E22ED5 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F6FC401F14251800E22ED5 /* Album.swift */; };
 		79F6FC431F14254E00E22ED5 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F6FC421F14254E00E22ED5 /* AlbumView.swift */; };
 		EDDF66161EBD28EF006123DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDF66151EBD28EF006123DA /* AppDelegate.swift */; };
@@ -22,6 +23,9 @@
 /* Begin PBXFileReference section */
 		6412D80520A0661900CB97C2 /* LibraryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
 		6412D80720A066DC00CB97C2 /* PersistencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
+		646E720E20A421AE00D2A33E /* RWBlueLibrary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RWBlueLibrary-Bridging-Header.h"; sourceTree = "<group>"; };
+		646E720F20A421AE00D2A33E /* SingletonDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingletonDemo.h; sourceTree = "<group>"; };
+		646E721020A421AE00D2A33E /* SingletonDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingletonDemo.m; sourceTree = "<group>"; };
 		79F6FC401F14251800E22ED5 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		79F6FC421F14254E00E22ED5 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		EDDF66121EBD28EF006123DA /* RWBlueLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RWBlueLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +82,15 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		646E721220A421C100D2A33E /* SingletonDemo */ = {
+			isa = PBXGroup;
+			children = (
+				646E720F20A421AE00D2A33E /* SingletonDemo.h */,
+				646E721020A421AE00D2A33E /* SingletonDemo.m */,
+			);
+			path = SingletonDemo;
+			sourceTree = "<group>";
+		};
 		EDDF66091EBD28EF006123DA = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,8 @@
 		EDDF66141EBD28EF006123DA /* RWBlueLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				646E720E20A421AE00D2A33E /* RWBlueLibrary-Bridging-Header.h */,
+				646E721220A421C100D2A33E /* SingletonDemo */,
 				6412D80420A0660300CB97C2 /* API */,
 				6412D80320A01FE000CB97C2 /* Model */,
 				6412D80220A01FDE00CB97C2 /* View */,
@@ -196,6 +211,7 @@
 			files = (
 				EDDF66181EBD28EF006123DA /* ViewController.swift in Sources */,
 				EDDF66371EBD2B8C006123DA /* HTTPClient.swift in Sources */,
+				646E721120A421AE00D2A33E /* SingletonDemo.m in Sources */,
 				6412D80620A0661900CB97C2 /* LibraryAPI.swift in Sources */,
 				EDDF66161EBD28EF006123DA /* AppDelegate.swift in Sources */,
 				79F6FC431F14254E00E22ED5 /* AlbumView.swift in Sources */,
@@ -339,10 +355,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RWBlueLibrary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.RWBlueLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RWBlueLibrary/RWBlueLibrary-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -353,10 +372,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RWBlueLibrary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.RWBlueLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RWBlueLibrary/RWBlueLibrary-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

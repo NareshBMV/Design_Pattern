@@ -37,6 +37,10 @@ final class ViewController: UIViewController {
   @IBOutlet var trashBarButtonItem: UIBarButtonItem!
   
   override func viewDidLoad() {
+    
+    let singleton:SingletonDemo = SingletonDemo.sharedManager() as! SingletonDemo
+    print(singleton.someProperty)
+    
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
   }
